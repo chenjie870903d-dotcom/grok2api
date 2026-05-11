@@ -107,6 +107,7 @@ COPY scripts ./scripts
 RUN set -eux; \
     mkdir -p /app/data /app/logs; \
     chmod +x /app/scripts/entrypoint.sh; \
+    chmod +x /app/scripts/init_storage.sh; \
     # 目录权限交给非 root 用户
     chown -R appuser:appgroup /app; \
     chmod -R 755 /app/data /app/logs
